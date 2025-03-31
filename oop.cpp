@@ -24,12 +24,25 @@ public:
     {
         cout << "This " << model << " is driving. \n";
     }
+
+    void display()
+    {
+        cout << "Car model " << model << " year " << year << endl;
+    }
 };
 
-class ElectricCar : Car
+class ElectricCar : public Car
 {
 public:
     int batteryCap;
+
+    ElectricCar(string m, int y) : Car(m, y) {}
+
+    void display()
+    {
+        Car::display();
+        cout << "Battery capacity is " << batteryCap << " percent." << endl;
+    }
 };
 
 int main()
@@ -42,7 +55,17 @@ int main()
 
     Car car1("Toyota", 1984);
 
+    ElectricCar car2("Telsa", 2024);
+    
+    car2.batteryCap = 98;
+
+    car1.display();
+
+    car2.display();
+
     car1.drive();
+
+    car2.drive();
 
     return 0;
 }
