@@ -56,6 +56,8 @@ int main()
     Car car1("Toyota", 1984);
 
     ElectricCar car2("Telsa", 2024);
+
+    Car car3("Nissan", 1999);
     
     car2.batteryCap = 98;
 
@@ -66,6 +68,8 @@ int main()
     car1.drive();
 
     car2.drive();
+
+    car3.display();
 
     return 0;
 }
